@@ -1,17 +1,18 @@
-Processed 20 buildings in 0.181 s
+The elapsed time per building is 0.009544156806077808 with the total elapsing time for 4571 floors being 43.62634076058166
+Processed 20 buildings in 0.191 s
 CSV written to task9_course_queue_results.csv
 
 ------------------------------------------------------------
 Sender: LSF System <lsfadmin@hpc.dtu.dk>
-Subject: Job 28184262: <task9_cupy_course_queue> in cluster <dcc> Done
+Subject: Job 28184439: <task9_cupy_course_queue> in cluster <dcc> Done
 
-Job <task9_cupy_course_queue> was submitted from host <hpclogin1> by user <s253013> in cluster <dcc> at Fri Apr 10 19:47:42 2026
-Job was executed on host(s) <4*n-62-18-13>, in queue <c02613>, as user <s253013> in cluster <dcc> at Fri Apr 10 19:47:42 2026
+Job <task9_cupy_course_queue> was submitted from host <hpclogin2> by user <s253013> in cluster <dcc> at Fri Apr 10 20:32:48 2026
+Job was executed on host(s) <4*n-62-18-13>, in queue <c02613>, as user <s253013> in cluster <dcc> at Fri Apr 10 20:32:49 2026
 </zhome/55/7/223284> was used as the home directory.
 </zhome/55/7/223284/scripts/mini_project> was used as the working directory.
-Started at Fri Apr 10 19:47:42 2026
-Terminated at Fri Apr 10 19:47:49 2026
-Results reported at Fri Apr 10 19:47:49 2026
+Started at Fri Apr 10 20:32:49 2026
+Terminated at Fri Apr 10 20:32:57 2026
+Results reported at Fri Apr 10 20:32:57 2026
 
 Your job looked like:
 
@@ -43,7 +44,7 @@ Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   2.16 sec.
+    CPU time :                                   2.25 sec.
     Max Memory :                                 -
     Average Memory :                             -
     Total Requested Memory :                     16384.00 MB
@@ -51,8 +52,8 @@ Resource usage summary:
     Max Swap :                                   -
     Max Processes :                              -
     Max Threads :                                -
-    Run time :                                   7 sec.
-    Turnaround time :                            7 sec.
+    Run time :                                   8 sec.
+    Turnaround time :                            9 sec.
 
 The output (if any) is above this job summary.
 

@@ -85,7 +85,10 @@ def main() -> None:
         u = jacobi_cupy_main(u0, interior, args.max_iter)
         stats = summary_stats(u, interior)
         rows.append({"building_id": bid, **stats})
+    cp.cuda.Stream.null.synchronize()
     elapsed = time.perf_counter() - t0
+
+    print(f'The elapsed time per building is {elapsed / args.n_buildings}')
 
     fields = ["building_id", "mean_temp", "std_temp", "pct_above_18", "pct_below_15"]
     with open(args.csv_out, "w", newline="", encoding="utf-8") as f:
