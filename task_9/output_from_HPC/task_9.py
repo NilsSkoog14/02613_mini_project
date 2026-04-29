@@ -29,6 +29,13 @@ def jacobi_cupy(u: cp.ndarray, interior: cp.ndarray) -> None:
                 + u[1 : -1, 2 : ]
             )
     return cp.array(u)
+
+def jacobi_cupy(u, interior):
+    u[1:-1, 1:-1][interior] = 0.25 * (
+        u[:-2, 1:-1] + u[2:, 1:-1] +
+        u[1:-1, :-2] + u[1:-1, 2:]
+    )[interior]
+    return u
     
 
 def jacobi_cupy_main(
