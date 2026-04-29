@@ -12,8 +12,8 @@ def load_data(load_dir, bid):
     return u, interior_mask
 
 
-def jacobi(u_and_interior_mask):
-    u, interior_mask, max_iter, atol = u_and_interior_mask
+def jacobi(u_and_interior_mask_with_constants):
+    u, interior_mask, max_iter, atol = u_and_interior_mask_with_constants # Unpack the constants and current state since pool.map can only handle one variable
     u = np.copy(u)
 
     for i in range(max_iter):
@@ -61,6 +61,12 @@ if __name__ == '__main__':
         nr_parallel = 1
     building_ids = building_ids[:N]
 
+    if len(sys.argv) == 4:
+        chunksize = int(sys.argv[3])
+    else:
+        # Default 1
+        chunksize = N / nr_parallel
+
     # Load floor plans
     all_u0 = np.empty((N, 514, 514))
     all_interior_mask = np.empty((N, 512, 512), dtype='bool')
@@ -76,8 +82,9 @@ if __name__ == '__main__':
     all_u = np.empty_like(all_u0)
     
     with Pool(nr_parallel) as pool:
-        all_u = np.array(pool.map(jacobi, [(u, mask, MAX_ITER, ABS_TOL) for u, mask in zip(all_u0, all_interior_mask)], chunksize= int(N / nr_parallel)))
-
+        zipped_state = zip(all_u0, all_interior_mask)
+        state_variables_with_constants = [(u, mask, MAX_ITER, ABS_TOL) for u, mask in zipped_state]
+        all_u = np.array(pool.map(jacobi, state_variables_with_constants, chunksize = chunksize)) # Fully dynamic parallelization
 
     # Print summary statistics in CSV format
     stat_keys = ['mean_temp', 'std_temp', 'pct_above_18', 'pct_below_15']
@@ -85,3 +92,5 @@ if __name__ == '__main__':
     for bid, u, interior_mask in zip(building_ids, all_u, all_interior_mask):
         stats = summary_stats(u, interior_mask)
         print(f"{bid},", ", ".join(str(stats[k]) for k in stat_keys))
+
+# scp /Users/loveredin/Documents/GitHub/02613_python_and_high_performance_computing/mini_project/task_6.py s253013@login.hpc.dtu.dk:scripts/mini_project/task_6

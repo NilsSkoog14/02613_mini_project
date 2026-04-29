@@ -61,6 +61,12 @@ if __name__ == '__main__':
         nr_parallel = 1
     building_ids = building_ids[:N]
 
+    if len(sys.argv) == 4:
+        chunksize = int(sys.argv[3])
+    else:
+        # Default 1
+        chunksize = int(N / nr_parallel)
+
     # Load floor plans
     all_u0 = np.empty((N, 514, 514))
     all_interior_mask = np.empty((N, 512, 512), dtype='bool')
@@ -78,7 +84,7 @@ if __name__ == '__main__':
     with Pool(nr_parallel) as pool:
         zipped_state = zip(all_u0, all_interior_mask)
         state_variables_with_constants = [(u, mask, MAX_ITER, ABS_TOL) for u, mask in zipped_state]
-        all_u = np.array(pool.map(jacobi, state_variables_with_constants, chunksize = 1)) # Fully dynamic parallelization
+        all_u = np.array(pool.map(jacobi, state_variables_with_constants, chunksize = chunksize)) # Fully dynamic parallelization
 
     # Print summary statistics in CSV format
     stat_keys = ['mean_temp', 'std_temp', 'pct_above_18', 'pct_below_15']

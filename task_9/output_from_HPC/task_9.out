@@ -1,0 +1,65 @@
+The elapsed time per building is 0.03431114898994565 with the total elapsing time for 4571 floors being 156.83626203304158
+Processed 20 buildings in 0.686 s
+CSV written to task_9.csv
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 28327580: <task_9> in cluster <dcc> Done
+
+Job <task_9> was submitted from host <hpclogin2> by user <s253013> in cluster <dcc> at Wed Apr 29 21:10:56 2026
+Job was executed on host(s) <4*n-62-18-13>, in queue <c02613>, as user <s253013> in cluster <dcc> at Wed Apr 29 21:10:58 2026
+</zhome/55/7/223284> was used as the home directory.
+</zhome/55/7/223284/scripts/mini_project/task_9> was used as the working directory.
+Started at Wed Apr 29 21:10:58 2026
+Terminated at Wed Apr 29 21:11:05 2026
+Results reported at Wed Apr 29 21:11:05 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -J task_9
+#BSUB -q c02613
+#BSUB -W 00:30
+#BSUB -n 4
+#BSUB -gpu "num=1:mode=exclusive_process"
+#BSUB -R "rusage[mem=4096MB]"
+#BSUB -R "select[gpu80gb]"
+#BSUB -R "span[hosts=1]"
+#BSUB -o task_9.out
+#BSUB -e task_9.err
+
+source /dtu/projects/02613_2025/conda/conda_init.sh
+conda activate 02613_2026
+
+time python3 task_9.py \
+  --n-buildings 20 \
+  --max-iter 20000 \
+  --csv-out task_9.csv
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   2.60 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     16384.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   7 sec.
+    Turnaround time :                            9 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <task_9.err> for stderr output of this job.
+
