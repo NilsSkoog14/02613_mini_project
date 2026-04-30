@@ -2,7 +2,23 @@ Processed 1000 buildings in 6.042 s
 CSV written to task10_profiling_1000_after_fix.csv
 Collecting data...
 Generating '/tmp/nsys-report-e830.qdstrm'
-[1/1] [0%                          ] task_10_1000_after_fix.nsys-rep[1/1] [0%                          ] task_10_1000_after_fix.nsys-rep[1/1] [8%                          ] task_10_1000_after_fix.nsys-rep[1/1] [=15%                        ] task_10_1000_after_fix.nsys-rep[1/1] [===23%                      ] task_10_1000_after_fix.nsys-rep[1/1] [=====30%                    ] task_10_1000_after_fix.nsys-rep[1/1] [=======37%                  ] task_10_1000_after_fix.nsys-rep[1/1] [=========44%                ] task_10_1000_after_fix.nsys-rep[1/1] [===========50%              ] task_10_1000_after_fix.nsys-rep[1/1] [============56%             ] task_10_1000_after_fix.nsys-rep[1/1] [==============64%           ] task_10_1000_after_fix.nsys-rep[1/1] [================71%         ] task_10_1000_after_fix.nsys-rep[1/1] [=================74%        ] task_10_1000_after_fix.nsys-rep[1/1] [==================75%       ] task_10_1000_after_fix.nsys-rep[1/1] [========================100%] task_10_1000_after_fix.nsys-rep[1/1] [========================100%] task_10_1000_after_fix.nsys-rep
+
+[1/1] [0%                          ] task_10_1000_after_fix.nsys-rep
+[1/1] [0%                          ] task_10_1000_after_fix.nsys-rep
+[1/1] [8%                          ] task_10_1000_after_fix.nsys-rep
+[1/1] [=15%                        ] task_10_1000_after_fix.nsys-rep
+[1/1] [===23%                      ] task_10_1000_after_fix.nsys-rep
+[1/1] [=====30%                    ] task_10_1000_after_fix.nsys-rep
+[1/1] [=======37%                  ] task_10_1000_after_fix.nsys-rep
+[1/1] [=========44%                ] task_10_1000_after_fix.nsys-rep
+[1/1] [===========50%              ] task_10_1000_after_fix.nsys-rep
+[1/1] [============56%             ] task_10_1000_after_fix.nsys-rep
+[1/1] [==============64%           ] task_10_1000_after_fix.nsys-rep
+[1/1] [================71%         ] task_10_1000_after_fix.nsys-rep
+[1/1] [=================74%        ] task_10_1000_after_fix.nsys-rep
+[1/1] [==================75%       ] task_10_1000_after_fix.nsys-rep
+[1/1] [========================100%] task_10_1000_after_fix.nsys-rep
+[1/1] [========================100%] task_10_1000_after_fix.nsys-rep
 Generated:
 	/zhome/55/7/223284/scripts/mini_project/task_10/task_10_1000_after_fix.nsys-rep
 Generating SQLite file task_10_1000_after_fix.sqlite from task_10_1000_after_fix.nsys-rep
