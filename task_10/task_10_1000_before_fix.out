@@ -1,0 +1,245 @@
+Processed 1000 buildings in 5.530 s
+CSV written to task_10_1000_before_fix.csv
+Collecting data...
+Generating '/tmp/nsys-report-6c37.qdstrm'
+[1/1] [0%                          ] task_10_1000_before_fix.nsys-rep[1/1] [0%                          ] task_10_1000_before_fix.nsys-rep[1/1] [8%                          ] task_10_1000_before_fix.nsys-rep[1/1] [=15%                        ] task_10_1000_before_fix.nsys-rep[1/1] [===22%                      ] task_10_1000_before_fix.nsys-rep[1/1] [====28%                     ] task_10_1000_before_fix.nsys-rep[1/1] [======35%                   ] task_10_1000_before_fix.nsys-rep[1/1] [========42%                 ] task_10_1000_before_fix.nsys-rep[1/1] [==========48%               ] task_10_1000_before_fix.nsys-rep[1/1] [============54%             ] task_10_1000_before_fix.nsys-rep[1/1] [==============61%           ] task_10_1000_before_fix.nsys-rep[1/1] [================68%         ] task_10_1000_before_fix.nsys-rep[1/1] [=================74%        ] task_10_1000_before_fix.nsys-rep[1/1] [==================75%       ] task_10_1000_before_fix.nsys-rep[1/1] [========================100%] task_10_1000_before_fix.nsys-rep[1/1] [========================100%] task_10_1000_before_fix.nsys-rep
+Generated:
+	/zhome/55/7/223284/scripts/mini_project/task_10/task_10_1000_before_fix.nsys-rep
+Generating SQLite file task_10_1000_before_fix.sqlite from task_10_1000_before_fix.nsys-rep
+Processing [task_10_1000_before_fix.sqlite] with [/appl/cuda/13.0.0/nsight-systems-2025.3.2/host-linux-x64/reports/nvtx_sum.py]... 
+
+ ** NVTX Range Summary (nvtx_sum):
+
+ Time (%)  Total Time (ns)  Instances  Avg (ns)  Med (ns)  Min (ns)  Max (ns)  StdDev (ns)   Style               Range             
+ --------  ---------------  ---------  --------  --------  --------  --------  -----------  -------  ------------------------------
+     51.9         51023490       2000   25511.7   20303.0     16280   8396656     187318.4  PushPop  CCCL:cub::DeviceReduce::Sum   
+     48.1         47258580       2001   23617.5   22811.0     17235    287209       7180.4  PushPop  CCCL:cub::DeviceReduce::Reduce
+
+Processing [task_10_1000_before_fix.sqlite] with [/appl/cuda/13.0.0/nsight-systems-2025.3.2/host-linux-x64/reports/osrt_sum.py]... 
+
+ ** OS Runtime Summary (osrt_sum):
+
+ Time (%)  Total Time (ns)  Num Calls    Avg (ns)      Med (ns)     Min (ns)    Max (ns)   StdDev (ns)           Name         
+ --------  ---------------  ---------  ------------  ------------  ----------  ----------  -----------  ----------------------
+     62.3      11712601001        129    90795356.6   100135061.0        3801   139854766   28644252.4  poll                  
+     21.3       3999968194          1  3999968194.0  3999968194.0  3999968194  3999968194          0.0  pthread_cond_timedwait
+      7.7       1453090008       2877      505071.3      450958.0        1778    22533253     658741.7  open64                
+      4.4        823373530       2844      289512.5      235753.0        1145    29834581     812908.6  close                 
+      2.7        510342709       2010      253901.8       86466.5        1051     1587053     237253.7  fread                 
+      0.8        156177722       3120       50057.0       40682.0        1028      401721      38838.3  read                  
+      0.5        101778583        509      199957.9       15703.0        1063    18531229     919787.0  ioctl                 
+      0.1         10195974       2008        5077.7        1897.0        1009     1144404      51004.0  fcntl                 
+      0.0          6228249         43      144843.0        3450.0        1468     1091969     300351.0  fopen                 
+      0.0          6147892       3069        2003.2        1538.0        1001      232022       5362.3  fclose                
+      0.0          3933248         10      393324.8      143757.0       38104     1617182     602020.2  sem_timedwait         
+      0.0          2994424        693        4321.0        1396.0        1113     1062044      40918.8  mmap64                
+      0.0          2430423       1366        1779.2        1266.5        1002       28337       1133.2  fdopen                
+      0.0          1995852        645        3094.3        2506.0        2102       66691       3023.2  munmap                
+      0.0          1565989          3      521996.3      175837.0       24054     1366098     734942.3  pthread_rwlock_wrlock 
+      0.0           980904        250        3923.6        1230.5        1003       33381       4973.4  fgets                 
+      0.0           669989          7       95712.7        3298.0        2267      445328     169964.3  fopen64               
+      0.0           472772          3      157590.7       75444.0       61577      335751     154447.1  pthread_create        
+      0.0           335544          1      335544.0      335544.0      335544      335544          0.0  pthread_cond_wait     
+      0.0           265578         18       14754.3       10121.0        2384       69566      16040.4  mmap                  
+      0.0           141775         14       10126.8       10081.5        1023       20551       6124.0  pthread_cond_signal   
+      0.0            70154         12        5846.2        3250.0        1130       33421       8800.8  write                 
+      0.0            48685          7        6955.0        4625.0        3143       14313       4205.5  pipe2                 
+      0.0            38941          1       38941.0       38941.0       38941       38941          0.0  waitpid               
+      0.0            27676          6        4612.7        4924.0        1408        7285       2608.1  open                  
+      0.0            15565          2        7782.5        7782.5        6354        9211       2020.2  socket                
+      0.0            11243          3        3747.7        1076.0        1053        9114       4647.4  fflush                
+      0.0             9042          1        9042.0        9042.0        9042        9042          0.0  connect               
+      0.0             9016          2        4508.0        4508.0        1060        7956       4876.2  pthread_cond_broadcast
+      0.0             7847          5        1569.4        1561.0        1002        2584        648.4  sigaction             
+      0.0             5967          3        1989.0        1298.0        1279        3390       1213.3  pthread_mutex_trylock 
+      0.0             4502          2        2251.0        2251.0        1391        3111       1216.2  fwrite                
+      0.0             3640          1        3640.0        3640.0        3640        3640          0.0  stat64                
+      0.0             3477          1        3477.0        3477.0        3477        3477          0.0  fputs                 
+      0.0             3328          2        1664.0        1664.0        1142        2186        738.2  dup2                  
+      0.0             2618          1        2618.0        2618.0        2618        2618          0.0  bind                  
+      0.0             2543          1        2543.0        2543.0        2543        2543          0.0  mprotect              
+
+Processing [task_10_1000_before_fix.sqlite] with [/appl/cuda/13.0.0/nsight-systems-2025.3.2/host-linux-x64/reports/cuda_api_sum.py]... 
+
+ ** CUDA API Summary (cuda_api_sum):
+
+ Time (%)  Total Time (ns)  Num Calls  Avg (ns)   Med (ns)   Min (ns)  Max (ns)   StdDev (ns)               Name             
+ --------  ---------------  ---------  ---------  ---------  --------  ---------  -----------  ------------------------------
+     36.5        259555798      39010     6653.6     5773.0      3192    1384698       7955.8  cuLaunchKernel                
+     23.4        166386426       9001    18485.3    17853.0     10589     978035      11098.8  cudaMemcpyAsync               
+     17.4        123933915         13  9533378.1   152193.0      9931  122292701   33880005.9  cudaMalloc                    
+      8.4         59906715       8002     7486.5     6200.0      3946    8383028      93681.2  cudaLaunchKernel              
+      2.9         20556916       7001     2936.3     2736.0      1847      25947        978.3  cudaStreamSynchronize         
+      2.5         17574221       3990     4404.6     4206.0       941      59153       2877.3  cudaEventQuery                
+      1.9         13824267       2000     6912.1     6220.5      3653     485681      11301.5  cudaEventRecord               
+      1.8         12704161       1002    12678.8    13257.0      9235      48259       3045.1  cudaMemsetAsync               
+      1.4          9952302       9001     1105.7      826.0       523      16768        769.7  cudaStreamIsCapturing_v10000  
+      1.1          8123723         23   353205.3   161296.0    140234    2269978     600054.1  cuModuleLoadData              
+      0.9          6733467       2000     3366.7     3395.0      1937      23491       1514.0  cudaEventCreateWithFlags      
+      0.7          5295912       1999     2649.3     2833.0       694      14036        758.8  cudaEventDestroy              
+      0.4          2907977         10   290797.7    72360.5     46772    1285663     468331.4  cuModuleUnload                
+      0.4          2677676          2  1338838.0  1338838.0   1256641    1421035     116244.1  cudaHostAlloc                 
+      0.2          1520246       8002      190.0      172.0        74      12970        159.2  cuKernelGetName               
+      0.0            92086        440      209.3      136.5        75       5153        290.0  cuGetProcAddress_v2           
+      0.0            69368          1    69368.0    69368.0     69368      69368          0.0  cudaMemGetInfo                
+      0.0             5032          2     2516.0     2516.0      1845       3187        948.9  cuInit                        
+      0.0             3343          2     1671.5     1671.5       974       2369        986.4  cuLibraryGetKernel            
+      0.0              991          2      495.5      495.5       135        856        509.8  cuModuleGetLoadingMode        
+      0.0              319          1      319.0      319.0       319        319          0.0  cudaGetDeviceProperties_v12000
+
+Processing [task_10_1000_before_fix.sqlite] with [/appl/cuda/13.0.0/nsight-systems-2025.3.2/host-linux-x64/reports/cuda_gpu_kern_sum.py]... 
+
+ ** CUDA GPU Kernel Summary (cuda_gpu_kern_sum):
+
+ Time (%)  Total Time (ns)  Instances  Avg (ns)  Med (ns)  Min (ns)  Max (ns)  StdDev (ns)                                                  Name                                                
+ --------  ---------------  ---------  --------  --------  --------  --------  -----------  ----------------------------------------------------------------------------------------------------
+     18.3         41488801       6003    6911.3    6912.0      6464      7649        191.7  cupy_add__float64_float64_float64                                                                   
+     12.7         28762317       5002    5750.2    6208.0      1536      9120       2295.9  cupy_copy__float64_float64                                                                          
+     12.5         28436238       1000   28436.2   28320.0      9120     55680       8295.4  cupy_var_core_float64                                                                               
+      6.1         13903701       2001    6948.4    7232.0      5952      8224        756.1  cupy_subtract__float64_float64_float64                                                              
+      5.4         12147257       2001    6070.6    6048.0      5792      6656        103.2  cupy_absolute__float64_float64                                                                      
+      5.3         12074138       2001    6034.1    6016.0      5792      6560        105.4  cupy_multiply__float_float64_float64                                                                
+      5.1         11513040       2000    5756.5    5728.0      2112      9536       3619.4  cupy_scan_naive                                                                                     
+      5.0         11381135       2001    5687.7    5632.0      5376      6272        217.6  void cub::CUB_200800_SM_750_800_860_890_900_1000_1200::DeviceReduceKernel<cub::CUB_200800_SM_750_80…
+      4.8         10919511       2001    5457.0    5441.0      5376      5760         37.3  cupy_copy__bool_bool                                                                                
+      2.8          6402568       3001    2133.5    1760.0      1728      4128        565.6  cupy_less__float64_float_bool                                                                       
+      2.7          6042247       1000    6042.2    6016.0      5760      6784        185.3  cupy_getitem_mask                                                                                   
+      2.6          5961935       2000    2981.0    2976.0      2176      4032        282.9  void cub::CUB_200800_SM_750_800_860_890_900_1000_1200::DeviceReduceKernel<cub::CUB_200800_SM_750_80…
+      2.2          5089413       2000    2544.7    2560.0      2016      3328        228.6  cupy_cub_sum_pass1                                                                                  
+      2.2          5010791       1000    5010.8    4992.0      4832      5280         88.3  cupy_bsum_shfl                                                                                      
+      2.2          4925891       2001    2461.7    2464.0      2368      3072         76.0  void cub::CUB_200800_SM_750_800_860_890_900_1000_1200::DeviceReduceSingleTileKernel<cub::CUB_200800…
+      1.8          4076360       2000    2038.2    1984.0      1888      2400         98.4  cupy_cub_sum_pass2                                                                                  
+      1.7          3941444       2000    1970.7    1952.0      1792      2432        159.9  void cub::CUB_200800_SM_750_800_860_890_900_1000_1200::DeviceReduceSingleTileKernel<cub::CUB_200800…
+      1.6          3628583       2000    1814.3    1824.0      1568      2240        180.4  cupy_true_divide__int64_int_float64                                                                 
+      1.5          3354726       2000    1677.4    1632.0      1568      2016         81.3  cupy_true_divide__float64_float_float64                                                             
+      1.4          3106564       2000    1553.3    1536.0      1504      1856         25.5  cupy_multiply__float64_float_float64                                                                
+      1.3          2842250       1000    2842.3    2848.0      1952      4096        379.0  cupy_greater__float64_float_bool                                                                    
+      0.7          1617699       1000    1617.7    1632.0      1568      1633         16.0  cupy_sqrt__float64_float64                                                                          
+
+Processing [task_10_1000_before_fix.sqlite] with [/appl/cuda/13.0.0/nsight-systems-2025.3.2/host-linux-x64/reports/cuda_gpu_mem_time_sum.py]... 
+
+ ** CUDA GPU MemOps Summary (by Time) (cuda_gpu_mem_time_sum):
+
+ Time (%)  Total Time (ns)  Count  Avg (ns)  Med (ns)  Min (ns)  Max (ns)  StdDev (ns)           Operation          
+ --------  ---------------  -----  --------  --------  --------  --------  -----------  ----------------------------
+     89.2        135083250   2000   67541.6   65856.0     13056    132672      48065.8  [CUDA memcpy Host-to-Device]
+      7.3         11079697   7001    1582.6    1600.0      1152      2176         82.4  [CUDA memcpy Device-to-Host]
+      3.5          5245483   1002    5235.0    5216.0      2560      6496        137.2  [CUDA memset]               
+
+Processing [task_10_1000_before_fix.sqlite] with [/appl/cuda/13.0.0/nsight-systems-2025.3.2/host-linux-x64/reports/cuda_gpu_mem_size_sum.py]... 
+
+ ** CUDA GPU MemOps Summary (by Size) (cuda_gpu_mem_size_sum):
+
+ Total (MB)  Count  Avg (MB)  Med (MB)  Min (MB)  Max (MB)  StdDev (MB)           Operation          
+ ----------  -----  --------  --------  --------  --------  -----------  ----------------------------
+   2359.296   2000     1.180     1.180     0.262     2.097        0.918  [CUDA memcpy Host-to-Device]
+   2115.944   1002     2.112     2.114     0.262     2.114        0.058  [CUDA memset]               
+      0.038   7001     0.000     0.000     0.000     0.000        0.000  [CUDA memcpy Device-to-Host]
+
+Processing [task_10_1000_before_fix.sqlite] with [/appl/cuda/13.0.0/nsight-systems-2025.3.2/host-linux-x64/reports/openmp_sum.py]... 
+SKIPPED: task_10_1000_before_fix.sqlite does not contain OpenMP event data.
+
+Processing [task_10_1000_before_fix.sqlite] with [/appl/cuda/13.0.0/nsight-systems-2025.3.2/host-linux-x64/reports/opengl_khr_range_sum.py]... 
+SKIPPED: task_10_1000_before_fix.sqlite does not contain KHR Extension (KHR_DEBUG) data.
+
+Processing [task_10_1000_before_fix.sqlite] with [/appl/cuda/13.0.0/nsight-systems-2025.3.2/host-linux-x64/reports/opengl_khr_gpu_range_sum.py]... 
+SKIPPED: task_10_1000_before_fix.sqlite does not contain GPU KHR Extension (KHR_DEBUG) data.
+
+Processing [task_10_1000_before_fix.sqlite] with [/appl/cuda/13.0.0/nsight-systems-2025.3.2/host-linux-x64/reports/vulkan_marker_sum.py]... 
+SKIPPED: task_10_1000_before_fix.sqlite does not contain Vulkan Debug Extension (Vulkan Debug Util) data.
+
+Processing [task_10_1000_before_fix.sqlite] with [/appl/cuda/13.0.0/nsight-systems-2025.3.2/host-linux-x64/reports/vulkan_gpu_marker_sum.py]... 
+SKIPPED: task_10_1000_before_fix.sqlite does not contain GPU Vulkan Debug Extension (GPU Vulkan Debug markers) data.
+
+Processing [task_10_1000_before_fix.sqlite] with [/appl/cuda/13.0.0/nsight-systems-2025.3.2/host-linux-x64/reports/dx11_pix_sum.py]... 
+SKIPPED: task_10_1000_before_fix.sqlite does not contain DX11 CPU debug markers.
+
+Processing [task_10_1000_before_fix.sqlite] with [/appl/cuda/13.0.0/nsight-systems-2025.3.2/host-linux-x64/reports/dx12_gpu_marker_sum.py]... 
+SKIPPED: task_10_1000_before_fix.sqlite does not contain DX12 GPU debug markers.
+
+Processing [task_10_1000_before_fix.sqlite] with [/appl/cuda/13.0.0/nsight-systems-2025.3.2/host-linux-x64/reports/dx12_pix_sum.py]... 
+SKIPPED: task_10_1000_before_fix.sqlite does not contain DX12 CPU debug markers.
+
+Processing [task_10_1000_before_fix.sqlite] with [/appl/cuda/13.0.0/nsight-systems-2025.3.2/host-linux-x64/reports/wddm_queue_sum.py]... 
+SKIPPED: task_10_1000_before_fix.sqlite does not contain WDDM context data.
+
+Processing [task_10_1000_before_fix.sqlite] with [/appl/cuda/13.0.0/nsight-systems-2025.3.2/host-linux-x64/reports/um_sum.py]... 
+SKIPPED: task_10_1000_before_fix.sqlite does not contain CUDA Unified Memory CPU page faults data.
+
+Processing [task_10_1000_before_fix.sqlite] with [/appl/cuda/13.0.0/nsight-systems-2025.3.2/host-linux-x64/reports/um_total_sum.py]... 
+SKIPPED: task_10_1000_before_fix.sqlite does not contain CUDA Unified Memory CPU page faults data.
+
+Processing [task_10_1000_before_fix.sqlite] with [/appl/cuda/13.0.0/nsight-systems-2025.3.2/host-linux-x64/reports/um_cpu_page_faults_sum.py]... 
+SKIPPED: task_10_1000_before_fix.sqlite does not contain CUDA Unified Memory CPU page faults data.
+
+Processing [task_10_1000_before_fix.sqlite] with [/appl/cuda/13.0.0/nsight-systems-2025.3.2/host-linux-x64/reports/openacc_sum.py]... 
+SKIPPED: task_10_1000_before_fix.sqlite does not contain OpenACC event data.
+
+Processing [task_10_1000_before_fix.sqlite] with [/appl/cuda/13.0.0/nsight-systems-2025.3.2/host-linux-x64/reports/syscall_sum.py]... 
+SKIPPED: task_10_1000_before_fix.sqlite does not contain syscall data.
+
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 28327675: <task_10_1000_before_fix> in cluster <dcc> Done
+
+Job <task_10_1000_before_fix> was submitted from host <hpclogin2> by user <s253013> in cluster <dcc> at Wed Apr 29 22:07:40 2026
+Job was executed on host(s) <4*n-62-18-13>, in queue <c02613>, as user <s253013> in cluster <dcc> at Wed Apr 29 22:07:42 2026
+</zhome/55/7/223284> was used as the home directory.
+</zhome/55/7/223284/scripts/mini_project/task_10> was used as the working directory.
+Started at Wed Apr 29 22:07:42 2026
+Terminated at Wed Apr 29 22:07:59 2026
+Results reported at Wed Apr 29 22:07:59 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -J task_10_1000_before_fix
+#BSUB -q c02613
+#BSUB -W 00:30
+#BSUB -n 4
+#BSUB -gpu "num=1:mode=exclusive_process"
+#BSUB -R "rusage[mem=4096MB]"
+#BSUB -R "select[gpu80gb]"
+#BSUB -R "span[hosts=1]"
+#BSUB -o task_10_1000_before_fix.out
+#BSUB -e task_10_1000_before_fix.err
+
+source /dtu/projects/02613_2025/conda/conda_init.sh
+conda activate 02613_2026
+module swap cuda/11.8 cuda/13.0.0
+
+nsys profile -o task_10_1000_before_fix python3 task_10.py \
+  --n-buildings 1000 \
+  --max-iter 20000 \
+  --csv-out task_10_1000_before_fix.csv
+
+nsys stats task_10_1000_before_fix.nsys-rep
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   12.00 sec.
+    Max Memory :                                 173 MB
+    Average Memory :                             173.00 MB
+    Total Requested Memory :                     16384.00 MB
+    Delta Memory :                               16211.00 MB
+    Max Swap :                                   -
+    Max Processes :                              5
+    Max Threads :                                21
+    Run time :                                   17 sec.
+    Turnaround time :                            19 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <task_10_1000_before_fix.err> for stderr output of this job.
+
